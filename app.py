@@ -28,7 +28,18 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def GPT_response(text):
     # 接收回應
-    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
+   response = openai.ChatCompletion.create(
+            model="ft:gpt-4o-mini-2024-07-18:personal:my-qa3:AVxxWGsa",
+            messages=[
+                {"role": "system", "content": "這是一個提供有關台塑企業文物館準確資訊的聊天機器人。"},
+                {"role": "user", "content": user_input}
+            ],
+            temperature=0.2,
+            max_tokens=2048,
+            top_p=0.9,
+            frequency_penalty=0.0,
+            presence_penalty=0.0
+        )
     print(response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
