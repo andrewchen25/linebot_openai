@@ -32,7 +32,6 @@ def GPT_response(text):
         model="ft:gpt-4o-mini-2024-07-18:personal:my-qa3:AVxxWGsa",
         messages=[
             {"role": "system", "content": "這是一個提供有關台塑企業文物館準確資訊的聊天機器人。"},
-            {"role": "user", "content": user_input}
         ],
         temperature=0.2,
         max_tokens=2048,
