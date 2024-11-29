@@ -16,7 +16,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def GPT_response(text):
     response = openai.ChatCompletion.create(
-        model="ft:gpt-4o-mini-2024-07-18:personal:my-qa3:AVxxWGsa",
+        model="ft:gpt-4o-mini-2024-07-18:personal:my-qa5:AYl3rQGE",
         messages=[
             {"role": "system", "content": "這是一個提供有關台塑企業文物館準確資訊的聊天機器人。"},
             {"role": "user", "content": text}
